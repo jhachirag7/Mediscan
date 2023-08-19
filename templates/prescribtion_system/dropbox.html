@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Bootstrap css file  -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+
+    <!--  font awesome icons  -->
+    <link rel="stylesheet" href="{%static 'css/all.min.css'%}">
+
+    <!--  custom css file  -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+    <!--  Responsive css file  -->
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+
+    <title>Mediscan</title>
+</head>
+
+
+<body>
+
+
+    <!--  ======================= Start Header Area ============================== -->
+
+    <header class="header_area">
+        <div class="main-menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><img src="{%static 'images/medical.png'%}" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dropbox' %}">Dropbox</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'results' %}">Results</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="about-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-image">
+                        <img src="{%static 'images/Medicine-amico.svg'%}" alt="About us" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 about-title">
+                    <h2 class="text-uppercase pt-5">
+                        <span>Get your medication</span>
+                        <span> Faster with</span>
+                        <span>prescription Scanning</span>
+                    </h2>
+                    <div class="paragraph py-4 w-75">
+                        <p class="para">
+                            Here You Can Upload your's Prescription
+                        </p>
+                        <!-- <p class="para">
+                            It is a long established fact that a reader will be distracted by the readable content
+                            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                            more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                            here
+                        </p> -->
+                    </div>
+                    <form method="post" action="{% url 'dropbox' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input class="form-control" type="file" name="files" multiple />
+                        <button type="submit" class="btn button primary-button text-uppercase">Upload
+                            Prescription</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+
+
+</html>

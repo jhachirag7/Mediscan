@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediscan</title>
+    <link href="{%static 'css/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/product.css'%}">
+
+</head>
+
+<body class="">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Mediscan</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            {% if request.user.is_superuser %} <a class="p-2 text-dark"
+                href="{% url 'dashboard' %}">Dashboard</a>{%endif%}
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Sign out</a>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Your Shopping Mart</h1>
+            <div class="shopping">
+                <img src="{%static 'images/cart.svg'%}">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+        <div class="list">
+            {% if not context.empty%}
+            {% for row in context.itertuples %}
+            <div class="item">
+                {% if row.links%}
+                <img id="pics1" src="{{row.links}}" alt="Services-2">
+                {%else%}
+                <img id="pics2" src="{% static 'images/pills.png' %}" alt="Services-3">
+                {% endif %}
+                <div class="title">{{row.title}}</div>
+                <div class="price">{{row.price}}</div>
+                <button onclick="addToCard(`{{row.links}}`,`{{row.title}}`,`{{row.price}}`);">Add To Card</button>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class=" card">
+        <h1>Cart</h1>
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <a href="{% url 'payment' %}" onclick="store()">
+                <div class="total">0</div>
+            </a>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <script src="{%static 'js/product.js'%}"></script>
+</body>
+
+</html>

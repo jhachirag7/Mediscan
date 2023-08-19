@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mediscan-375315",
+  "private_key_id": "8c7c01a36ea5cbf8d215b336a66bf452407e2ef1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDuQ2bRc05S2MN5\np+MffKDg8owPJbIpA8ktlI99JoAt7k5T1CQB1I+RMmecYm6V/c7yjdpGkgcQRp75\nIedWGxb+OraMcXzOPSq+doaZmGdXhP7ERUQpwsfDmWObgw7e0/fRAkNDedtjHw5L\nD61770itsufw7+AN84LuM05qXHErJCaJ7BJRowBSNZiLuFZZxwk/Og4MdGgmI56j\nxZccXOQkkSeuteHGO/cSh3zrZrgNysDxwlwcqgyRK9KF+a/k2FVjl7PU4em8sioK\ncKtt4ro52P94IfxtEc7uIhZNwImxXAMCclBuddl4+YbFXj+x2f1Cm5Rbb6pXf+5d\nROxd09JDAgMBAAECggEAP3xhLKULNSMB7uwPpieonFe0fyK9tpUGKWmA1EmKdPKf\nF1Ia6Avx1y/1kKNfsQKoflPS2eP2Et2mZV6ly/k65rHRS1m/9hoxRf/B/LIxsw3C\nbpzAPVpjrRg1hM3mi/Qx/5SZRKT3EpHHVrPON4w6MuJNUBMygbUlaX/tQITyOJqN\nMtrlMwvQujFgNEr3JZMifYt51pYXoxA4yHKq1Mg16qqd2Oq+lVukud7AyG8FbH6b\nwXrAPqhpHrVkBzoUFiC1hWxDuby9Bvg1hvNwDEl3fwfXDqqTmFsvQUlJ9YH2hs15\n2RDxfCrPTvOfVnwDopG4P0wPNxT4itFRRSsKveZblQKBgQD60VOuhnq3PmGlpG7/\nmV0X939JszIzqYSXMrLTuFeN3E+RCQ6U+29kD9ckNvlDC1DkARQkZ2YdmU7yNKxk\nz8imWZENdqricrz2mwBYENBbikUJXSvzBbeEeWk8cH+ZkNdrRnxR6AnTRZQKtliJ\nzELPd7SBGQKHvqFZk8oMvTHuXQKBgQDzL6tszZGXabgiDgmkYgsbKUB/QVeEcomG\nbmuqJZ64t/Fciq9kbC4kfvn9G0FtikkhLHxgsP89ct4EKNa7v6IZIaz4+h36XtKl\nusMlscUFBoG6+WNDszxrY9kIjy7cmnWsiT9s5CORTjfHIYK+ab6/tePwFK1WNBHH\nqEriqbZ5HwKBgQCwSNvV+HLbxB6Be3cActw5chymwinwoZ6tXlbN8+ylqkjKGWGE\nWMxLuc5uh6zd8GAkQJXVmE7vUsdn+JmKKXhPYvhOTC+DBT3G3d56BydKj35CPJgd\nMNFxbJwIfNFSL7kYjuvl7X6qXWbVuJ+2CjiS9QGLEvbyTYu+F9+U4IztiQKBgBOD\nsMLjYBqBXkhFThrFz1RXpBhSGv7C3ixOcg9OQ4VZJWIist5hG/bLxa284Sw0G5gw\n5K4xpdm9fPlieZDJWO2hWSsFjyBHOaoY6Y39zOyRUBm7525IVMHdWk4ohz8mmejF\nfrRzPjNrzmgJVV+IRslFhEwArMQtG3wlEhVMPxtLAoGBAL6ck8MtYSUKSk775iZ6\nBIl3Sebp/7aYf44QXHOlD8Q6qAVa9bAu9/R/pgHJNZM8R8gRSPwMv2yk+sBMdY5V\n0zEcZd1L3GOGu+DvVihQG0JJuf+1QYXOi821IzUjbGxJqxRVdkm19E0kB/tqOLv2\nCZYQHiGo10aPfCnQkx+A5IrB\n-----END PRIVATE KEY-----\n",
+  "client_email": "sa-mediscan-api@mediscan-375315.iam.gserviceaccount.com",
+  "client_id": "117016548481372717968",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sa-mediscan-api%40mediscan-375315.iam.gserviceaccount.com"
+}

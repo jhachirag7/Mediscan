@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediscan</title>
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{%static 'css/payment.css'%}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form id="formid">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <h3 class="title">billing address</h3>
+
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input id='name' type="text" placeholder="sankalp ghosh">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input id="email" type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input id="addr" type="text" placeholder="room - street - locality">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input id="city" type="text" placeholder="mumbai">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input id="state" type="text" placeholder="india">
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input id="zip" type="text" placeholder="123 456">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col">
+
+                    <h3 class="title">payment</h3>
+
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <div class="innerclass">
+                            <a href=""><img src="{%static 'images/Mastercard-logo.svg.png'%}" alt=""></a>
+                            <a href=""><img src="{%static 'images/Visa_Inc._logo.svg.png'%}" alt=""></a>
+                            <a href=""><img src="{%static 'images/RuPay.svg.png'%}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input id="namecard" type="text" placeholder="mr. john deo">
+                    </div>
+                    <div class="inputBox">
+                        <span>card number :</span>
+                        <input id="cardnum" type="number" placeholder="1111-2222-3333-4444">
+                    </div>
+                    <div class="inputBox">
+                        <span>exp month :</span>
+                        <input id="month" type="text" placeholder="january">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>exp year :</span>
+                            <input id="year" type="number" placeholder="2022">
+                        </div>
+                        <div class="inputBox">
+                            <span>CVV :</span>
+                            <input id="cvv" type="text" placeholder="1234">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <input type="submit" value="proceed to checkout" class="submit-btn">
+
+        </form>
+
+    </div>
+
+    <script src="{%static 'js/payment.js'%}"></script>
+
+</body>
+
+</html>

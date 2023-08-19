@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Bootstrap css file  -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+
+    <!--  font awesome icons  -->
+    <link rel="stylesheet" href="{%static 'css/all.min.css'%}">
+
+    <!--  custom css file  -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+    <!--  Responsive css file  -->
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+
+    <title>Mediscan</title>
+</head>
+
+
+<body>
+
+
+    <!--  ======================= Start Header Area ============================== -->
+
+    <header class="header_area">
+        <div class="main-menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><img src="{%static 'images/medical.png'%}" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dropbox' %}">Dropbox</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'results' %}">Results</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--  ======================= Start Main Area ================================ -->
+    <main class="site-main">
+
+
+        <!--  ======================= Start Banner Area =======================  -->
+        <section class="site-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="title-text">Prescription Scanning Made Easy</h2>
+                        <h4 class="title-text-1 ">Simplify Your Medicine <span> Management with Mediscan</span></h4>
+                        <div class="site-buttons">
+                            <div class="d-flex flex-row flex-wrap">
+                                <a type="button" class="btn button primary-button mr-4 text-uppercase"
+                                    href="{% url 'register' %}">
+                                    Register</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 banner-image">
+                        <img src="{%static 'images/pharm1.png'%}" alt="banner-img" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+    <!--  Jquery js file  -->
+    <script src="{% static 'js/jquery.3.4.1.js'%}"></script>
+
+    <!--  Bootstrap js file  -->
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+
+    <!--  custom js file  -->
+    <script src="{% static 'js/main.js'%}"></script>
+
+
+</body>
+
+</html>

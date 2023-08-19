@@ -1,0 +1,164 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+	<title>Mediscan</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{%static 'css/dist/css/bootstrap.min.css'%}" rel="stylesheet">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" href="{%static 'css/style2.css'%}">
+	<link href="{%static 'css/pricing.css'%}" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+		<img src="./img/medical-symbol.png" alt="">
+		<h5 class="my-0 mr-md-auto font-weight-normal">Mediscan</h5>
+		<nav class="my-2 my-md-0 mr-md-3">
+			{% if request.user.is_superuser %} <a class="p-2 text-dark"
+				href="{% url 'dashboard' %}">Dashboard</a>{%endif%}
+			<!-- <a class="p-2 text-dark" href="./dropbox.html">Dropbox</a>
+            <a class="p-2 text-dark" href="./results.html">Results</a> -->
+		</nav>
+		<a class="btn btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
+
+	</div>
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>History</h1>
+				</div>
+
+			</div>
+
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Prescriptions</h3>
+						<i class='bx bx-search'></i>
+						<i class='bx bx-filter'></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>File Name</th>
+								<th>Preview</th>
+								<th>Download</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							{% for row in context %}
+							<tr>
+								<td>
+
+									<p>{{row.hash_val}}</p>
+								</td>
+								<td>
+									<div class="d-flex gap-2 mb-3">
+										<a type="button" href="{{row.image.url}}" class="btn btn-info">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M16.0001 12C16.0001 14.2091 14.2092 16 12.0001 16C9.79097 16 8.0001 14.2091 8.0001 12C8.0001 9.79086 9.79097 8 12.0001 8C14.2092 8 16.0001 9.79086 16.0001 12ZM14.0001 12C14.0001 13.1046 13.1047 14 12.0001 14C10.8955 14 10.0001 13.1046 10.0001 12C10.0001 10.8954 10.8955 10 12.0001 10C13.1047 10 14.0001 10.8954 14.0001 12Z"
+													fill="black" />
+												<path fill-rule="evenodd" clip-rule="evenodd"
+													d="M22.6059 12.7781C22.8745 12.2893 22.8745 11.7107 22.6059 11.2219C21.5011 9.21142 18.0534 4 12.0001 4C5.94677 4 2.49915 9.21141 1.39435 11.2219C1.12571 11.7107 1.12571 12.2893 1.39435 12.7781C2.49915 14.7886 5.94677 20 12.0001 20C18.0534 20 21.5011 14.7886 22.6059 12.7781ZM20.7495 12C20.2262 11.0814 19.2538 9.61152 17.8334 8.35493C16.3304 7.02516 14.4072 6 12.0001 6C9.59298 6 7.66981 7.02516 6.16677 8.35493C4.74644 9.61152 3.77399 11.0814 3.25071 12C3.77399 12.9186 4.74644 14.3885 6.16677 15.6451C7.66981 16.9748 9.59298 18 12.0001 18C14.4072 18 16.3304 16.9748 17.8334 15.6451C19.2538 14.3885 20.2262 12.9186 20.7495 12Z"
+													fill="black" />
+											</svg>
+										</a>
+								</td>
+								<td>
+									<div class="d-flex gap-2 mb-3">
+										<a type="button" href="{{row.image.url}}" download class="btn btn-secondary">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+												fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+												<path
+													d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+												<path
+													d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+											</svg>
+										</a>
+								</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<!-- <div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div> -->
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+
+
+	<script src="{% static 'js/script.js'%}"></script>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="{% static "js/assets/js/vendor/jquery-slim.min.js"%}"><\/script>')
+	</script>
+	<script src="{% static 'js/assets/js/vendor/popper.min.js'%}"></script>
+	<script src="{% static 'js/dist/js/bootstrap.min.js'%}"></script>
+	<script src="{% static 'js/assets/js/vendor/holder.min.js'%}"></script>
+	<script>
+		Holder.addTheme('thumb', {
+			bg: '#55595c',
+			fg: '#eceeef',
+			text: 'Thumbnail'
+		});
+	</script>
+</body>
+
+</html>
